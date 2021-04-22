@@ -274,6 +274,9 @@ namespace SQLServerDatabaseManagement
                 SetReadOnlyControls(true);
                 _sqlServer.ConnectionString = _connectionString;
                 _sqlServer.DbConnection = _sqlServer.OpenConnection();
+                lbl_Server.Caption = @"Server Name: " + txt_ServerName.Text;
+                lbl_User.Caption = @"User: " + txt_UserLogin.Text;
+                lbl_Status.Caption = @"Status: Connected";
                 LoadDatabase();
             }
             catch (Exception ex)
@@ -357,6 +360,9 @@ namespace SQLServerDatabaseManagement
                 btn_Disconnect.Enabled = false;
                 SetReadOnlyControls(false);
                 ClearDataSource(true);
+                lbl_Server.Caption = string.Empty;
+                lbl_User.Caption = string.Empty;
+                lbl_Status.Caption = string.Empty;
                 this.Cursor = Cursors.Default;
             }
             catch (Exception ex)

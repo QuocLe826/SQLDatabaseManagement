@@ -29,6 +29,7 @@ namespace SQLServerDatabaseManagement
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.grp_ServerInfo = new DevExpress.XtraEditors.GroupControl();
             this.lk_Authentication = new DevExpress.XtraEditors.LookUpEdit();
@@ -41,6 +42,15 @@ namespace SQLServerDatabaseManagement
             this.lbl_Authentication = new DevExpress.XtraEditors.LabelControl();
             this.lbl_UserLogin = new DevExpress.XtraEditors.LabelControl();
             this.lbl_ServerName = new DevExpress.XtraEditors.LabelControl();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.lbl_Server = new DevExpress.XtraBars.BarStaticItem();
             this.grp_Management = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tab_Database = new DevExpress.XtraTab.XtraTabPage();
@@ -125,12 +135,15 @@ namespace SQLServerDatabaseManagement
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbl_User = new DevExpress.XtraBars.BarStaticItem();
+            this.lbl_Status = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.grp_ServerInfo)).BeginInit();
             this.grp_ServerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lk_Authentication.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Password.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserLogin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ServerName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grp_Management)).BeginInit();
             this.grp_Management.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -207,7 +220,7 @@ namespace SQLServerDatabaseManagement
             this.grp_ServerInfo.Controls.Add(this.lbl_ServerName);
             this.grp_ServerInfo.Location = new System.Drawing.Point(1, 1);
             this.grp_ServerInfo.Name = "grp_ServerInfo";
-            this.grp_ServerInfo.Size = new System.Drawing.Size(1315, 169);
+            this.grp_ServerInfo.Size = new System.Drawing.Size(1325, 169);
             this.grp_ServerInfo.TabIndex = 0;
             this.grp_ServerInfo.Text = "Connect to Server";
             // 
@@ -300,25 +313,112 @@ namespace SQLServerDatabaseManagement
             this.lbl_ServerName.TabIndex = 0;
             this.lbl_ServerName.Text = "Server Name";
             // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1,
+            this.bar2,
+            this.bar3});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.lbl_Server,
+            this.lbl_User,
+            this.lbl_Status});
+            this.barManager1.MainMenu = this.bar2;
+            this.barManager1.MaxItemId = 3;
+            this.barManager1.StatusBar = this.bar3;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1326, 40);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 648);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1326, 22);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 608);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1326, 40);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 608);
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.Text = "Tools";
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Main menu";
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.lbl_Server),
+            new DevExpress.XtraBars.LinkPersistInfo(this.lbl_User),
+            new DevExpress.XtraBars.LinkPersistInfo(this.lbl_Status)});
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            // 
+            // lbl_Server
+            // 
+            this.lbl_Server.Id = 0;
+            this.lbl_Server.Name = "lbl_Server";
+            // 
             // grp_Management
             // 
             this.grp_Management.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grp_Management.Controls.Add(this.xtraTabControl1);
-            this.grp_Management.Location = new System.Drawing.Point(1, 170);
+            this.grp_Management.Location = new System.Drawing.Point(1, 172);
             this.grp_Management.Name = "grp_Management";
-            this.grp_Management.Size = new System.Drawing.Size(1315, 494);
-            this.grp_Management.TabIndex = 7;
+            this.grp_Management.Size = new System.Drawing.Size(1325, 474);
+            this.grp_Management.TabIndex = 8;
             this.grp_Management.Text = "Management";
             // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 20);
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 27);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.tab_Database;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1311, 472);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1321, 445);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tab_Database,
@@ -332,7 +432,7 @@ namespace SQLServerDatabaseManagement
             // 
             this.tab_Database.Controls.Add(this.groupControl9);
             this.tab_Database.Name = "tab_Database";
-            this.tab_Database.Size = new System.Drawing.Size(1305, 444);
+            this.tab_Database.Size = new System.Drawing.Size(1319, 416);
             this.tab_Database.Text = "Database";
             // 
             // groupControl9
@@ -341,17 +441,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl9.Location = new System.Drawing.Point(0, 0);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(1305, 444);
+            this.groupControl9.Size = new System.Drawing.Size(1319, 416);
             this.groupControl9.TabIndex = 0;
             this.groupControl9.Text = "Database";
             // 
             // grd_Database
             // 
             this.grd_Database.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_Database.Location = new System.Drawing.Point(2, 20);
+            this.grd_Database.Location = new System.Drawing.Point(2, 27);
             this.grd_Database.MainView = this.gv_Database;
             this.grd_Database.Name = "grd_Database";
-            this.grd_Database.Size = new System.Drawing.Size(1301, 422);
+            this.grd_Database.Size = new System.Drawing.Size(1315, 387);
             this.grd_Database.TabIndex = 9;
             this.grd_Database.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Database});
@@ -366,6 +466,7 @@ namespace SQLServerDatabaseManagement
             this.gv_Database.GridControl = this.grd_Database;
             this.gv_Database.IndicatorWidth = 30;
             this.gv_Database.Name = "gv_Database";
+            this.gv_Database.OptionsBehavior.Editable = false;
             this.gv_Database.OptionsBehavior.ReadOnly = true;
             this.gv_Database.OptionsView.BestFitMode = DevExpress.XtraGrid.Views.Grid.GridBestFitMode.Full;
             this.gv_Database.OptionsView.ShowAutoFilterRow = true;
@@ -409,7 +510,7 @@ namespace SQLServerDatabaseManagement
             // 
             this.tab_Tables.Controls.Add(this.splitContainerControl1);
             this.tab_Tables.Name = "tab_Tables";
-            this.tab_Tables.Size = new System.Drawing.Size(1317, 444);
+            this.tab_Tables.Size = new System.Drawing.Size(1319, 416);
             this.tab_Tables.Text = "Tables";
             // 
             // splitContainerControl1
@@ -421,7 +522,7 @@ namespace SQLServerDatabaseManagement
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1317, 444);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1319, 416);
             this.splitContainerControl1.SplitterPosition = 535;
             this.splitContainerControl1.TabIndex = 0;
             // 
@@ -431,17 +532,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(535, 444);
+            this.groupControl3.Size = new System.Drawing.Size(535, 416);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Tables";
             // 
             // grd_Tables
             // 
             this.grd_Tables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_Tables.Location = new System.Drawing.Point(2, 20);
+            this.grd_Tables.Location = new System.Drawing.Point(2, 27);
             this.grd_Tables.MainView = this.gv_Tables;
             this.grd_Tables.Name = "grd_Tables";
-            this.grd_Tables.Size = new System.Drawing.Size(531, 422);
+            this.grd_Tables.Size = new System.Drawing.Size(531, 387);
             this.grd_Tables.TabIndex = 1;
             this.grd_Tables.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Tables});
@@ -457,6 +558,7 @@ namespace SQLServerDatabaseManagement
             this.gv_Tables.GridControl = this.grd_Tables;
             this.gv_Tables.IndicatorWidth = 30;
             this.gv_Tables.Name = "gv_Tables";
+            this.gv_Tables.OptionsBehavior.Editable = false;
             this.gv_Tables.OptionsView.BestFitMode = DevExpress.XtraGrid.Views.Grid.GridBestFitMode.Fast;
             this.gv_Tables.OptionsView.ShowAutoFilterRow = true;
             this.gv_Tables.OptionsView.ShowGroupPanel = false;
@@ -510,17 +612,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(777, 444);
+            this.groupControl4.Size = new System.Drawing.Size(774, 416);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "Columns";
             // 
             // grd_Columns
             // 
             this.grd_Columns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_Columns.Location = new System.Drawing.Point(2, 20);
+            this.grd_Columns.Location = new System.Drawing.Point(2, 27);
             this.grd_Columns.MainView = this.gv_Columns;
             this.grd_Columns.Name = "grd_Columns";
-            this.grd_Columns.Size = new System.Drawing.Size(773, 422);
+            this.grd_Columns.Size = new System.Drawing.Size(770, 387);
             this.grd_Columns.TabIndex = 1;
             this.grd_Columns.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Columns});
@@ -536,6 +638,7 @@ namespace SQLServerDatabaseManagement
             this.gv_Columns.GridControl = this.grd_Columns;
             this.gv_Columns.IndicatorWidth = 30;
             this.gv_Columns.Name = "gv_Columns";
+            this.gv_Columns.OptionsBehavior.Editable = false;
             this.gv_Columns.OptionsView.ShowAutoFilterRow = true;
             this.gv_Columns.OptionsView.ShowGroupPanel = false;
             // 
@@ -583,7 +686,7 @@ namespace SQLServerDatabaseManagement
             // 
             this.tab_Views.Controls.Add(this.groupControl10);
             this.tab_Views.Name = "tab_Views";
-            this.tab_Views.Size = new System.Drawing.Size(1317, 444);
+            this.tab_Views.Size = new System.Drawing.Size(1319, 416);
             this.tab_Views.Text = "Views";
             // 
             // groupControl10
@@ -592,17 +695,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl10.Location = new System.Drawing.Point(0, 0);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(1317, 444);
+            this.groupControl10.Size = new System.Drawing.Size(1319, 416);
             this.groupControl10.TabIndex = 0;
             this.groupControl10.Text = "Views";
             // 
             // grd_Views
             // 
             this.grd_Views.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_Views.Location = new System.Drawing.Point(2, 20);
+            this.grd_Views.Location = new System.Drawing.Point(2, 27);
             this.grd_Views.MainView = this.gv_Views;
             this.grd_Views.Name = "grd_Views";
-            this.grd_Views.Size = new System.Drawing.Size(1313, 422);
+            this.grd_Views.Size = new System.Drawing.Size(1315, 387);
             this.grd_Views.TabIndex = 3;
             this.grd_Views.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Views});
@@ -618,6 +721,7 @@ namespace SQLServerDatabaseManagement
             this.gv_Views.GridControl = this.grd_Views;
             this.gv_Views.IndicatorWidth = 30;
             this.gv_Views.Name = "gv_Views";
+            this.gv_Views.OptionsBehavior.Editable = false;
             this.gv_Views.OptionsView.ShowAutoFilterRow = true;
             this.gv_Views.OptionsView.ShowGroupPanel = false;
             // 
@@ -667,7 +771,7 @@ namespace SQLServerDatabaseManagement
             // 
             this.xtraTabPage1.Controls.Add(this.splitContainerControl2);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1317, 444);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1319, 416);
             this.xtraTabPage1.Text = "Functions";
             // 
             // splitContainerControl2
@@ -679,7 +783,7 @@ namespace SQLServerDatabaseManagement
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.splitContainerControl5);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1317, 444);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1319, 416);
             this.splitContainerControl2.SplitterPosition = 525;
             this.splitContainerControl2.TabIndex = 0;
             // 
@@ -689,17 +793,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(525, 444);
+            this.groupControl1.Size = new System.Drawing.Size(525, 416);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Functions";
             // 
             // grd_Functions
             // 
             this.grd_Functions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_Functions.Location = new System.Drawing.Point(2, 20);
+            this.grd_Functions.Location = new System.Drawing.Point(2, 27);
             this.grd_Functions.MainView = this.gv_Functions;
             this.grd_Functions.Name = "grd_Functions";
-            this.grd_Functions.Size = new System.Drawing.Size(521, 422);
+            this.grd_Functions.Size = new System.Drawing.Size(521, 387);
             this.grd_Functions.TabIndex = 1;
             this.grd_Functions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Functions});
@@ -713,6 +817,7 @@ namespace SQLServerDatabaseManagement
             this.gv_Functions.GridControl = this.grd_Functions;
             this.gv_Functions.IndicatorWidth = 30;
             this.gv_Functions.Name = "gv_Functions";
+            this.gv_Functions.OptionsBehavior.Editable = false;
             this.gv_Functions.OptionsView.ShowAutoFilterRow = true;
             this.gv_Functions.OptionsView.ShowGroupPanel = false;
             this.gv_Functions.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gv_Functions_FocusedRowObjectChanged);
@@ -751,7 +856,7 @@ namespace SQLServerDatabaseManagement
             this.splitContainerControl5.Panel1.Text = "Panel1";
             this.splitContainerControl5.Panel2.Controls.Add(this.groupControl8);
             this.splitContainerControl5.Panel2.Text = "Panel2";
-            this.splitContainerControl5.Size = new System.Drawing.Size(787, 444);
+            this.splitContainerControl5.Size = new System.Drawing.Size(784, 416);
             this.splitContainerControl5.SplitterPosition = 332;
             this.splitContainerControl5.TabIndex = 0;
             // 
@@ -761,17 +866,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(787, 332);
+            this.groupControl2.Size = new System.Drawing.Size(784, 332);
             this.groupControl2.TabIndex = 8;
             this.groupControl2.Text = "Parameters";
             // 
             // grd_FunctionParams
             // 
             this.grd_FunctionParams.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_FunctionParams.Location = new System.Drawing.Point(2, 20);
+            this.grd_FunctionParams.Location = new System.Drawing.Point(2, 27);
             this.grd_FunctionParams.MainView = this.gv_FunctionParams;
             this.grd_FunctionParams.Name = "grd_FunctionParams";
-            this.grd_FunctionParams.Size = new System.Drawing.Size(783, 310);
+            this.grd_FunctionParams.Size = new System.Drawing.Size(780, 303);
             this.grd_FunctionParams.TabIndex = 2;
             this.grd_FunctionParams.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_FunctionParams});
@@ -787,6 +892,7 @@ namespace SQLServerDatabaseManagement
             this.gv_FunctionParams.GridControl = this.grd_FunctionParams;
             this.gv_FunctionParams.IndicatorWidth = 30;
             this.gv_FunctionParams.Name = "gv_FunctionParams";
+            this.gv_FunctionParams.OptionsBehavior.Editable = false;
             this.gv_FunctionParams.OptionsView.ShowAutoFilterRow = true;
             this.gv_FunctionParams.OptionsView.ShowGroupPanel = false;
             // 
@@ -834,17 +940,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(787, 107);
+            this.groupControl8.Size = new System.Drawing.Size(784, 74);
             this.groupControl8.TabIndex = 9;
             this.groupControl8.Text = "Data Type Return";
             // 
             // grd_DataReturn
             // 
             this.grd_DataReturn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_DataReturn.Location = new System.Drawing.Point(2, 20);
+            this.grd_DataReturn.Location = new System.Drawing.Point(2, 27);
             this.grd_DataReturn.MainView = this.gv_DataReturn;
             this.grd_DataReturn.Name = "grd_DataReturn";
-            this.grd_DataReturn.Size = new System.Drawing.Size(783, 85);
+            this.grd_DataReturn.Size = new System.Drawing.Size(780, 45);
             this.grd_DataReturn.TabIndex = 2;
             this.grd_DataReturn.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_DataReturn});
@@ -858,6 +964,7 @@ namespace SQLServerDatabaseManagement
             this.gv_DataReturn.GridControl = this.grd_DataReturn;
             this.gv_DataReturn.IndicatorWidth = 30;
             this.gv_DataReturn.Name = "gv_DataReturn";
+            this.gv_DataReturn.OptionsBehavior.Editable = false;
             this.gv_DataReturn.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn25
@@ -886,7 +993,7 @@ namespace SQLServerDatabaseManagement
             // 
             this.tab_StoredProc.Controls.Add(this.splitContainerControl3);
             this.tab_StoredProc.Name = "tab_StoredProc";
-            this.tab_StoredProc.Size = new System.Drawing.Size(1317, 444);
+            this.tab_StoredProc.Size = new System.Drawing.Size(1319, 416);
             this.tab_StoredProc.Text = "Stored Procedures";
             // 
             // splitContainerControl3
@@ -898,7 +1005,7 @@ namespace SQLServerDatabaseManagement
             this.splitContainerControl3.Panel1.Text = "Panel1";
             this.splitContainerControl3.Panel2.Controls.Add(this.groupControl6);
             this.splitContainerControl3.Panel2.Text = "Panel2";
-            this.splitContainerControl3.Size = new System.Drawing.Size(1317, 444);
+            this.splitContainerControl3.Size = new System.Drawing.Size(1319, 416);
             this.splitContainerControl3.SplitterPosition = 540;
             this.splitContainerControl3.TabIndex = 1;
             // 
@@ -908,17 +1015,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl5.Location = new System.Drawing.Point(0, 0);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(540, 444);
+            this.groupControl5.Size = new System.Drawing.Size(540, 416);
             this.groupControl5.TabIndex = 1;
             this.groupControl5.Text = "Stored Procedures";
             // 
             // grd_StoredProc
             // 
             this.grd_StoredProc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_StoredProc.Location = new System.Drawing.Point(2, 20);
+            this.grd_StoredProc.Location = new System.Drawing.Point(2, 27);
             this.grd_StoredProc.MainView = this.gv_StoredProc;
             this.grd_StoredProc.Name = "grd_StoredProc";
-            this.grd_StoredProc.Size = new System.Drawing.Size(536, 422);
+            this.grd_StoredProc.Size = new System.Drawing.Size(536, 387);
             this.grd_StoredProc.TabIndex = 1;
             this.grd_StoredProc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_StoredProc});
@@ -932,6 +1039,7 @@ namespace SQLServerDatabaseManagement
             this.gv_StoredProc.GridControl = this.grd_StoredProc;
             this.gv_StoredProc.IndicatorWidth = 30;
             this.gv_StoredProc.Name = "gv_StoredProc";
+            this.gv_StoredProc.OptionsBehavior.Editable = false;
             this.gv_StoredProc.OptionsView.ShowAutoFilterRow = true;
             this.gv_StoredProc.OptionsView.ShowGroupPanel = false;
             this.gv_StoredProc.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gv_Stored_FocusedRowObjectChanged);
@@ -966,17 +1074,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl6.Location = new System.Drawing.Point(0, 0);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(772, 444);
+            this.groupControl6.Size = new System.Drawing.Size(769, 416);
             this.groupControl6.TabIndex = 8;
             this.groupControl6.Text = "Parameters";
             // 
             // grd_StoredProcParams
             // 
             this.grd_StoredProcParams.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_StoredProcParams.Location = new System.Drawing.Point(2, 20);
+            this.grd_StoredProcParams.Location = new System.Drawing.Point(2, 27);
             this.grd_StoredProcParams.MainView = this.gv_StoredProcParams;
             this.grd_StoredProcParams.Name = "grd_StoredProcParams";
-            this.grd_StoredProcParams.Size = new System.Drawing.Size(768, 422);
+            this.grd_StoredProcParams.Size = new System.Drawing.Size(765, 387);
             this.grd_StoredProcParams.TabIndex = 1;
             this.grd_StoredProcParams.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_StoredProcParams});
@@ -992,6 +1100,7 @@ namespace SQLServerDatabaseManagement
             this.gv_StoredProcParams.GridControl = this.grd_StoredProcParams;
             this.gv_StoredProcParams.IndicatorWidth = 30;
             this.gv_StoredProcParams.Name = "gv_StoredProcParams";
+            this.gv_StoredProcParams.OptionsBehavior.Editable = false;
             this.gv_StoredProcParams.OptionsView.ShowAutoFilterRow = true;
             this.gv_StoredProcParams.OptionsView.ShowGroupPanel = false;
             // 
@@ -1037,7 +1146,7 @@ namespace SQLServerDatabaseManagement
             // 
             this.xtraTabPage2.Controls.Add(this.groupControl7);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1317, 444);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1319, 438);
             this.xtraTabPage2.Text = "Triggers";
             // 
             // groupControl7
@@ -1046,17 +1155,17 @@ namespace SQLServerDatabaseManagement
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl7.Location = new System.Drawing.Point(0, 0);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(1317, 444);
+            this.groupControl7.Size = new System.Drawing.Size(1319, 438);
             this.groupControl7.TabIndex = 2;
             this.groupControl7.Text = "Triggers";
             // 
             // grd_Triggers
             // 
             this.grd_Triggers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_Triggers.Location = new System.Drawing.Point(2, 20);
+            this.grd_Triggers.Location = new System.Drawing.Point(2, 27);
             this.grd_Triggers.MainView = this.gv_Triggers;
             this.grd_Triggers.Name = "grd_Triggers";
-            this.grd_Triggers.Size = new System.Drawing.Size(1313, 422);
+            this.grd_Triggers.Size = new System.Drawing.Size(1315, 409);
             this.grd_Triggers.TabIndex = 1;
             this.grd_Triggers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Triggers});
@@ -1071,6 +1180,7 @@ namespace SQLServerDatabaseManagement
             this.gv_Triggers.GridControl = this.grd_Triggers;
             this.gv_Triggers.IndicatorWidth = 30;
             this.gv_Triggers.Name = "gv_Triggers";
+            this.gv_Triggers.OptionsBehavior.Editable = false;
             this.gv_Triggers.OptionsView.ShowAutoFilterRow = true;
             this.gv_Triggers.OptionsView.ShowGroupPanel = false;
             // 
@@ -1106,13 +1216,30 @@ namespace SQLServerDatabaseManagement
             this.gridColumn35.Visible = true;
             this.gridColumn35.VisibleIndex = 2;
             // 
+            // lbl_User
+            // 
+            this.lbl_User.Id = 1;
+            this.lbl_User.Name = "lbl_User";
+            // 
+            // lbl_Status
+            // 
+            this.lbl_Status.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.lbl_Status.Id = 2;
+            this.lbl_Status.Name = "lbl_Status";
+            this.lbl_Status.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1316, 668);
+            this.ClientSize = new System.Drawing.Size(1326, 670);
             this.Controls.Add(this.grp_Management);
             this.Controls.Add(this.grp_ServerInfo);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frm_Main.IconOptions.Image")));
             this.Name = "frm_Main";
             this.Text = "SQL Server Database Management";
             this.Load += new System.EventHandler(this.frm_Main_Load);
@@ -1123,6 +1250,7 @@ namespace SQLServerDatabaseManagement
             ((System.ComponentModel.ISupportInitialize)(this.txt_Password.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserLogin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ServerName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grp_Management)).EndInit();
             this.grp_Management.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -1182,6 +1310,7 @@ namespace SQLServerDatabaseManagement
             ((System.ComponentModel.ISupportInitialize)(this.grd_Triggers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Triggers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1190,10 +1319,6 @@ namespace SQLServerDatabaseManagement
         private DevExpress.XtraEditors.GroupControl grp_ServerInfo;
         private DevExpress.XtraEditors.TextEdit txt_ServerName;
         private DevExpress.XtraEditors.LabelControl lbl_ServerName;
-        private DevExpress.XtraEditors.GroupControl grp_Management;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage tab_Database;
-        private DevExpress.XtraTab.XtraTabPage tab_Tables;
         private DevExpress.XtraEditors.TextEdit txt_Password;
         private DevExpress.XtraEditors.TextEdit txt_UserLogin;
         private DevExpress.XtraEditors.LabelControl lbl_Password;
@@ -1202,37 +1327,18 @@ namespace SQLServerDatabaseManagement
         private DevExpress.XtraEditors.SimpleButton btn_Disconnect;
         private DevExpress.XtraEditors.SimpleButton btn_Connect;
         private DevExpress.XtraEditors.LabelControl lbl_Authentication;
-        private DevExpress.XtraTab.XtraTabPage tab_Views;
-        private DevExpress.XtraTab.XtraTabPage tab_StoredProc;
-        private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraGrid.GridControl grd_Columns;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_Columns;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraGrid.GridControl grd_Tables;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_Tables;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.GridControl grd_Functions;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_Functions;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
-        private DevExpress.XtraEditors.GroupControl groupControl5;
-        private DevExpress.XtraGrid.GridControl grd_StoredProc;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_StoredProc;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.BarStaticItem lbl_Server;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraEditors.GroupControl grp_Management;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage tab_Database;
         private DevExpress.XtraEditors.GroupControl groupControl9;
         private DevExpress.XtraGrid.GridControl grd_Database;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Database;
@@ -1240,6 +1346,25 @@ namespace SQLServerDatabaseManagement
         private DevExpress.XtraGrid.Columns.GridColumn gc_DatabaseName;
         private DevExpress.XtraGrid.Columns.GridColumn gc_CreateDate;
         private DevExpress.XtraGrid.Columns.GridColumn gc_State;
+        private DevExpress.XtraTab.XtraTabPage tab_Tables;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraGrid.GridControl grd_Tables;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_Tables;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraGrid.GridControl grd_Columns;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_Columns;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraTab.XtraTabPage tab_Views;
         private DevExpress.XtraEditors.GroupControl groupControl10;
         private DevExpress.XtraGrid.GridControl grd_Views;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Views;
@@ -1247,14 +1372,15 @@ namespace SQLServerDatabaseManagement
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraGrid.GridControl grd_Functions;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_Functions;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraEditors.GroupControl groupControl7;
-        private DevExpress.XtraGrid.GridControl grd_Triggers;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_Triggers;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl5;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraGrid.GridControl grd_FunctionParams;
@@ -1270,6 +1396,14 @@ namespace SQLServerDatabaseManagement
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
+        private DevExpress.XtraTab.XtraTabPage tab_StoredProc;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private DevExpress.XtraGrid.GridControl grd_StoredProc;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_StoredProc;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private DevExpress.XtraGrid.GridControl grd_StoredProcParams;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_StoredProcParams;
@@ -1278,10 +1412,16 @@ namespace SQLServerDatabaseManagement
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
+        private DevExpress.XtraGrid.GridControl grd_Triggers;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_Triggers;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
+        private DevExpress.XtraBars.BarStaticItem lbl_User;
+        private DevExpress.XtraBars.BarStaticItem lbl_Status;
     }
 }
 
